@@ -1,9 +1,10 @@
 import React from 'react'
+import NavBar from './NabBar/NavBar'
 
 const FrontendLayout = () => {
   return (
     <div>
-      FrontendLayout
+      <NavBar/>
     </div>
   )
 }

@@ -1,19 +1,19 @@
 import { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 // layouts
-import { FrontendLayout } from '@src/layouts/clients/FrontendLayout';
-import { DashboardLayout } from '@src/layouts/dashboard/DashboardLayout';
-// pages
-import { AccountSetting } from '@src/pages/dashboard/AccountSetting';
-import { PaymentMethod } from '@src/pages/dashboard/PaymentMethod';
-import { DashboardApp } from '@src/pages/dashboard/DashboardApp';
-import { VendorRegister } from '@src/pages/auth/VendorRegister';
-import { Addresses } from '@src/pages/dashboard/Addresses';
-import { VendorLogin } from '@src/pages/auth/VendorLogin';
-import { Password } from '@src/pages/auth/Password';
-import { Register } from '@src/pages/auth/Register';
-import { Order } from '@src/pages/dashboard/Order';
-import { Login } from '@src/pages/auth/Login';
+// import { FrontendLayout } from '../layouts/clients/FrontendLayout';
+// import { DashboardLayout } from '@src/layouts/dashboard/DashboardLayout';
+// // pages
+// import { AccountSetting } from '@src/pages/dashboard/AccountSetting';
+// import { PaymentMethod } from '@src/pages/dashboard/PaymentMethod';
+// import { DashboardApp } from '@src/pages/dashboard/DashboardApp';
+// import { VendorRegister } from '@src/pages/auth/VendorRegister';
+// import { Addresses } from '@src/pages/dashboard/Addresses';
+// import { VendorLogin } from '@src/pages/auth/VendorLogin';
+// import { Password } from '@src/pages/auth/Password';
+// import { Register } from '@src/pages/auth/Register';
+// import { Order } from '@src/pages/dashboard/Order';
+// import { Login } from '@src/pages/auth/Login';
 
 export const Routers = () => {
  
@@ -21,7 +21,7 @@ export const Routers = () => {
 
   return (
     <Routes>
-      <Route path='/login' element={<Login title='Login' />} />
+      {/* <Route path='/login' element={<Login title='Login' />} />
       <Route path='/vendor-login' element={<VendorLogin title='Login' />} />
       <Route path='/register' element={<Register title='Register' />} />
       <Route
@@ -31,9 +31,9 @@ export const Routers = () => {
       <Route
         path='/forgot-password'
         element={<Password title='Forgot Password' />}
-      />
-      <Route path='/' element={<FrontendLayout />} />
-      <Route
+      /> */}
+      {/* <Route path='/' element={<FrontendLayout />} /> */}
+      {/* <Route
         path='/dashboard'
         element={<DashboardLayout open={open} setOpen={setOpen} />}
       >
@@ -43,7 +43,7 @@ export const Routers = () => {
         <Route path='addresses' element={<Addresses />} />
         <Route path='payment' element={<PaymentMethod />} />
         <Route path='profile' element={<AccountSetting />} />
-      </Route>
+      </Route> */}
     </Routes>
   );
 };

@@ -1,9 +1,10 @@
 import React from 'react'
+import TopBar from './TopBar'
 
 const NavBar = () => {
   return (
     <div>
-      NavBar
+      <TopBar/>
     </div>
   )
 }
