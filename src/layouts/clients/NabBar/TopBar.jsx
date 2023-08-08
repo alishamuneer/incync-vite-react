@@ -1,13 +1,20 @@
 import React from 'react'
 import { AppBar, Box, Toolbar, Typography, Button, IconButton } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
+import { styled, alpha } from '@mui/material/styles';
 
 
 const TopBar = () => {
+  const Navbar = styled(AppBar)(({ theme }) => ({
+    height : '20vh',
+    color: 'black',
+    background : "none"
+    
+  }));
   return (
     <>
       <Box sx={{ flexGrow: 1 }}>
-        <AppBar position="static">
+        <Navbar position="static">
           <Toolbar>
             <IconButton
               size="large"
@@ -23,7 +30,7 @@ const TopBar = () => {
             </Typography>
             <Button color="inherit">Login</Button>
           </Toolbar>
-        </AppBar>
+        </Navbar>
       </Box>  
     </>
   )
