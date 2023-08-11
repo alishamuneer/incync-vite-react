@@ -4,6 +4,7 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { styled, alpha } from '@mui/material/styles';
 import logo from "../../../assets/logo-dt.svg"
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+import PersonIcon from '@mui/icons-material/Person';
 
 
 const TopBar = () => {
@@ -38,26 +39,32 @@ const TopBar = () => {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    background: 'black',
-    color: 'white'
+
   }));
 
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
-      padding: theme.spacing(1, 1, 1, 0),
+      padding: '4px 4px 4px 10px',
       // vertical padding + font size from searchIcon
-      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      // paddingLeft: `calc(1em + ${theme.spacing(1)})`,
       transition: theme.transitions.create('width'),
       width: '100%',
       [theme.breakpoints.up('sm')]: {
-        width: '34ch',
+        width: '25ch',
         '&:focus': {
           width: '20ch',
         },
       },
     },
-    
+    '& ::placeholder': {
+      color: 'black',
+      opacity: '1',
+      fontSize: '13px',
+
+    },
+    border: '1px solid',
+    borderRadius: '22px'
   }));
 
   return (
@@ -65,19 +72,20 @@ const TopBar = () => {
       <Box sx={{ flexGrow: 1 }}>
         <Navbar position="static">
           <Toolbar>
-            <Stack spacing={5} direction="row">
-              <img src={logo} alt="logo" />
+            <Stack spacing={8} direction="row">
               <Search>
                 <Stack>
+                  <SearchIconWrapper>
+                    <SearchOutlinedIcon />
+                  </SearchIconWrapper>
                   <StyledInputBase
                     placeholder="Search David Jones"
                     inputProps={{ 'aria-label': 'search' }}
                   />
-                  <SearchIconWrapper>
-                    <SearchOutlinedIcon />
-                  </SearchIconWrapper>
                 </Stack>
               </Search>
+              <img src={logo} alt="logo" />
+              <PersonIcon/>
             </Stack>
           </Toolbar>
         </Navbar>
