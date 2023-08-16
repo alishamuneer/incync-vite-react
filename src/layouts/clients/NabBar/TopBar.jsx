@@ -4,12 +4,16 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { styled, alpha } from '@mui/material/styles';
 import logo from "../../../assets/logo-dt.svg"
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
-import PersonIcon from '@mui/icons-material/Person';
+import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
 
 
 const TopBar = () => {
-  const Navbar = styled(AppBar)(({ theme }) => ({
-    height: '20vh',
+  const options = ['Designer', 'Women', 'Men', 'Shoes', 'Bags & Accessories', 'Beauty', 'Kids', 'Home & Food', 'Electrical', 'Gifts', 'Sale', 'Brands', 'Inspiration']
+
+  const Navbar = styled(AppBar)(() => ({
+    height: '16vh',
     color: 'black',
     background: "none"
 
@@ -42,6 +46,16 @@ const TopBar = () => {
 
   }));
 
+  const CartWrapper = styled('div')(({ theme }) => ({
+    padding: '0 8px 0 8px',
+    border: '1px solid',
+    borderRadius: '9px',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
+
+  }));
+
   const StyledInputBase = styled(InputBase)(({ theme }) => ({
     color: 'inherit',
     '& .MuiInputBase-input': {
@@ -60,9 +74,10 @@ const TopBar = () => {
     '& ::placeholder': {
       color: 'black',
       opacity: '1',
+      fontWeight: '600px',
       fontSize: '13px',
-
     },
+
     border: '1px solid',
     borderRadius: '22px'
   }));
@@ -84,8 +99,21 @@ const TopBar = () => {
                   />
                 </Stack>
               </Search>
-              <img src={logo} alt="logo" />
-              <PersonIcon/>
+              <img src={logo} alt="logo" style={{ paddingLeft: '260px' }} />
+              <Stack spacing={2} direction="row" style={{ paddingLeft: '260px' }}>
+                <PersonOutlineOutlinedIcon />
+                <FavoriteBorderIcon />
+                <CartWrapper >
+                  <ShoppingBagOutlinedIcon style={{ fontSize: '16px' }} /> $0.00
+                </CartWrapper>
+              </Stack>
+            </Stack>
+          </Toolbar>
+          <Toolbar style={{justifyContent : 'center'}}>
+            <Stack direction="row" spacing={4}>
+              {options.map((o) => (
+                <Typography  variant="subtitle2">{o}</Typography>
+              ))}
             </Stack>
           </Toolbar>
         </Navbar>
